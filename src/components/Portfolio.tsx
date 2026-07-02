@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { GitHub } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 
 const stack = [
   { name: "AWS", color: "bg-orange-400" },
@@ -73,7 +73,7 @@ export default function Portfolio() {
               <div>
                 <p className="font-semibold text-sm">{f.name}</p>
                 <p className="text-muted text-xs flex items-center gap-1">
-                  <Github size={12} /> {f.handle}
+                  <FaGithub size={12} /> {f.handle}
                 </p>
               </div>
             </div>

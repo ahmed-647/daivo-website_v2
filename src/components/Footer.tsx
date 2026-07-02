@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
-import { Linkedin, Github, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -27,10 +28,10 @@ export default function Footer() {
 
         <div className="flex items-center gap-4">
           <a href="#" className="text-muted hover:text-secondary transition-colors">
-            <Linkedin size={16} />
+            <FaLinkedin size={16} />
           </a>
           <a href="#" className="text-muted hover:text-white transition-colors">
-            <Github size={16} />
+            <FaGithub size={16} />
           </a>
         </div>
       </motion.div>

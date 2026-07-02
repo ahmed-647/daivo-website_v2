@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
-import { Linkedin, GitHub, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const founders = [
   { 
@@ -73,10 +74,10 @@ export default function Team() {
               </span>
               <div className="flex gap-3">
                 <a href="#" className="text-muted hover:text-secondary transition-colors">
-                  <Linkedin size={14} />
+                  <FaLinkedin size={14} />
                 </a>
                 <a href="#" className="text-muted hover:text-white transition-colors">
-                  <Github size={14} />
+                  <FaGithub size={14} />
                 </a>
               </div>
             </div>

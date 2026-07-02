@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
-import { Send, Mail, Linkedin, GitHub } from "lucide-react";
+import { Send, Mail } from "lucide-react";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 export default function Contact() {
   return (
@@ -94,8 +95,8 @@ export default function Contact() {
           >
             <h3 className="font-semibold mb-4">Follow Us</h3>
             <div className="flex gap-3">
-              <button className="flex items-center gap-2 border border-border rounded-full px-4 py-2 text-xs transition-all hover:bg-white/5 hover:border-muted"><Linkedin size={14} className="text-secondary" /> LinkedIn</button>
-              <button className="flex items-center gap-2 border border-border rounded-full px-4 py-2 text-xs transition-all hover:bg-white/5 hover:border-muted"><Github size={14} /> GitHub</button>
+              <button className="flex items-center gap-2 border border-border rounded-full px-4 py-2 text-xs transition-all hover:bg-white/5 hover:border-muted"><FaLinkedin size={14} className="text-secondary" /> LinkedIn</button>
+              <button className="flex items-center gap-2 border border-border rounded-full px-4 py-2 text-xs transition-all hover:bg-white/5 hover:border-muted"><FaGithub size={14} /> GitHub</button>
             </div>
           </motion.div>
 
