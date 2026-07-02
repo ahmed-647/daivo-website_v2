@@ -18,7 +18,7 @@ export default function Footer() {
             <span className="text-white">Dai</span>
             <span className="bg-brand-gradient bg-clip-text text-transparent">Vo</span>
           </span>
-          <span className="text-text-muted">|</span>
+          <span className="text-muted">|</span>
           <span className="text-muted">Engineering Intelligent Systems</span>
         </div>
 
@@ -27,10 +27,10 @@ export default function Footer() {
         </div>
 
         <div className="flex items-center gap-4">
-          <a href="#" className="text-muted hover:text-secondary transition-colors">
+          <a href="#" className="text-muted hover:text-secondary transition-colors hover:scale-110">
             <FaLinkedin size={16} />
           </a>
-          <a href="#" className="text-muted hover:text-white transition-colors">
+          <a href="#" className="text-muted hover:text-white transition-colors hover:scale-110">
             <FaGithub size={16} />
           </a>
         </div>

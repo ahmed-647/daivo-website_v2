@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import { Clock, ShieldCheck, TrendingUp, Play } from "lucide-react";
 
 const steps = [
@@ -8,53 +10,80 @@ const steps = [
 
 export default function CaseStudy() {
   return (
-    <section id="case-study" className="py-24 px-6">
-      <div className="max-w-7xl mx-auto text-center mb-16">
-        <span className="inline-block text-xs tracking-widest text-primary border border-primary/40 rounded-full px-4 py-1.5 mb-4">
+    <section id="case-study" className="py-24 px-6 relative overflow-hidden">
+      <div className="blob w-[400px] h-[400px] bg-primary top-0 right-0 animate-blob opacity-10" />
+
+      <motion.div
+        className="max-w-7xl mx-auto text-center mb-16 relative z-10"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <span className="inline-block text-xs tracking-widest text-primary border border-primary/40 rounded-full px-4 py-1.5 mb-4 bg-primary/5">
           ● REAL RESULTS
         </span>
-        <h2 className="text-4xl font-bold mb-4">Case Study</h2>
+        <h2 className="text-4xl font-bold mb-4 tracking-tight">Case Study</h2>
         <p className="text-muted max-w-xl mx-auto">
-          How a DaiVo AI Support Agent transformed an e-commerce brand's customer experience.
+          How a DaiVo AI Support Agent transformed an e-commerce brand&apos;s customer experience.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="max-w-5xl mx-auto grid grid-cols-3 gap-6 mb-16">
-        <div className="glass rounded-2xl p-6 text-center">
+      <motion.div
+        className="max-w-5xl mx-auto grid grid-cols-3 gap-6 mb-16 relative z-10"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+      >
+        <div className="glass rounded-2xl p-6 text-center transition-all hover:-translate-y-1 hover:border-primary/40 border border-transparent">
           <Clock className="mx-auto text-primary mb-2" />
           <p className="text-2xl font-bold">&lt;2s</p>
           <p className="text-muted text-xs">Avg response time</p>
         </div>
-        <div className="glass rounded-2xl p-6 text-center">
+        <div className="glass rounded-2xl p-6 text-center transition-all hover:-translate-y-1 hover:border-primary/40 border border-transparent">
           <ShieldCheck className="mx-auto text-primary mb-2" />
           <p className="text-2xl font-bold">99.9%</p>
           <p className="text-muted text-xs">Uptime SLA</p>
         </div>
-        <div className="glass rounded-2xl p-6 text-center">
+        <div className="glass rounded-2xl p-6 text-center transition-all hover:-translate-y-1 hover:border-primary/40 border border-transparent">
           <TrendingUp className="mx-auto text-primary mb-2" />
           <p className="text-2xl font-bold">12,400+</p>
           <p className="text-muted text-xs">Questions handled</p>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 mb-12">
-        {steps.map((s) => (
-          <div key={s.num} className="glass rounded-2xl p-6">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 mb-12 relative z-10">
+        {steps.map((s, i) => (
+          <motion.div
+            key={s.num}
+            className="glass rounded-2xl p-6 transition-all hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(124,58,237,0.15)]"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: i * 0.15 }}
+          >
             <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-full mb-4 ${s.color}`}>
               {s.tag}
             </span>
-            <p className="text-muted text-sm">{s.text}</p>
-          </div>
+            <p className="text-muted text-sm leading-relaxed">{s.text}</p>
+          </motion.div>
         ))}
       </div>
 
-      <div className="max-w-6xl mx-auto glass rounded-2xl h-64 flex flex-col items-center justify-center gap-3">
-        <div className="w-14 h-14 rounded-full border border-border flex items-center justify-center">
+      <motion.div
+        className="max-w-6xl mx-auto glass rounded-2xl h-64 flex flex-col items-center justify-center gap-3 relative z-10 group cursor-pointer transition-all hover:border-primary/40 border border-transparent"
+        initial={{ opacity: 0, scale: 0.97 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="w-14 h-14 rounded-full border border-border flex items-center justify-center transition-all group-hover:bg-brand-gradient group-hover:border-transparent group-hover:shadow-[0_0_25px_rgba(124,58,237,0.5)]">
           <Play size={20} />
         </div>
         <p className="text-sm">Watch the full walkthrough (Loom)</p>
         <p className="text-muted text-xs">loom.com/share/daivo-case-study</p>
-      </div>
+      </motion.div>
     </section>
   );
 }

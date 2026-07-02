@@ -12,41 +12,41 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 px-6 overflow-hidden">
-      {/* Header Section */}
+    <section id="services" className="py-24 px-6 overflow-hidden relative">
+      <div className="blob w-[350px] h-[350px] bg-secondary top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-blob opacity-10" />
+
       <motion.div 
-        className="max-w-7xl mx-auto text-center mb-16"
+        className="max-w-7xl mx-auto text-center mb-16 relative z-10"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <span className="inline-block text-xs tracking-widest text-primary border border-primary/40 rounded-full px-4 py-1.5 mb-4">
+        <span className="inline-block text-xs tracking-widest text-primary border border-primary/40 rounded-full px-4 py-1.5 mb-4 bg-primary/5">
           ● WHAT WE BUILD
         </span>
-        <h2 className="text-4xl font-bold mb-4">Our Services</h2>
+        <h2 className="text-4xl font-bold mb-4 tracking-tight">Our Services</h2>
         <p className="text-muted max-w-xl mx-auto">
           Modular AI products and infrastructure solutions, ready to deploy in your stack.
         </p>
       </motion.div>
 
-      {/* Grid Section */}
-      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6 relative z-10">
         {services.map((s, index) => (
           <motion.div 
             key={s.title} 
-            className="glass rounded-2xl p-6 border border-transparent transition-all duration-300 hover:shadow-[0_0_30px_rgba(124,58,237,0.2)] hover:border-primary/40"
+            className="group glass rounded-2xl p-6 border border-transparent transition-all duration-300 hover:shadow-[0_0_40px_rgba(124,58,237,0.25)] hover:border-primary/40 hover:-translate-y-1"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
-            <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-              <s.icon className="text-primary" size={20} />
+            <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-4 transition-all duration-300 group-hover:bg-brand-gradient group-hover:shadow-[0_0_20px_rgba(124,58,237,0.4)]">
+              <s.icon className="text-primary transition-colors group-hover:text-white" size={20} />
             </div>
             <h3 className="font-semibold text-lg mb-2">{s.title}</h3>
-            <p className="text-muted text-sm mb-5">{s.desc}</p>
-            <span className="inline-block bg-primary/10 text-primary text-xs font-semibold px-3 py-1.5 rounded-full">
+            <p className="text-muted text-sm mb-5 leading-relaxed">{s.desc}</p>
+            <span className="inline-block bg-primary/10 text-primary text-xs font-semibold px-3 py-1.5 rounded-full transition-all group-hover:bg-primary/20">
               From {s.price}
             </span>
           </motion.div>

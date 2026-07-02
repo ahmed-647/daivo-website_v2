@@ -21,7 +21,6 @@ const founders = [
 export default function Portfolio() {
   return (
     <section id="portfolio" className="py-24 px-6 overflow-hidden">
-      {/* Header Section */}
       <motion.div 
         className="max-w-7xl mx-auto text-center mb-12"
         initial={{ opacity: 0, y: 30 }}
@@ -29,38 +28,36 @@ export default function Portfolio() {
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <span className="inline-block text-xs tracking-widest text-primary border border-primary/40 rounded-full px-4 py-1.5 mb-4">
+        <span className="inline-block text-xs tracking-widest text-primary border border-primary/40 rounded-full px-4 py-1.5 mb-4 bg-primary/5">
           ● TECH STACK
         </span>
-        <h2 className="text-4xl font-bold mb-4">Portfolio & Stack</h2>
+        <h2 className="text-4xl font-bold mb-4 tracking-tight">Portfolio & Stack</h2>
         <p className="text-muted max-w-xl mx-auto">
           Battle-tested tools we use to build reliable, scalable AI systems and cloud infrastructure.
         </p>
       </motion.div>
 
-      {/* Badges Section */}
       <div className="flex flex-wrap justify-center gap-3 mb-12 max-w-4xl mx-auto">
         {stack.map((t, index) => (
           <motion.span 
             key={t.name} 
-            className="glass flex items-center gap-2 text-sm px-4 py-2 rounded-full border border-border/40"
+            className="glass flex items-center gap-2 text-sm px-4 py-2 rounded-full border border-border/40 transition-all hover:border-primary/50 hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(124,58,237,0.15)] cursor-default"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.3, delay: index * 0.05 }}
           >
-            <span className={`w-2 h-2 rounded-full ${t.color}`} />
+            <span className={`w-2 h-2 rounded-full ${t.color} shadow-[0_0_8px_currentColor]`} />
             {t.name}
           </motion.span>
         ))}
       </div>
 
-      {/* Founders Section */}
       <div className="max-w-3xl mx-auto grid md:grid-cols-2 gap-4">
         {founders.map((f) => (
           <motion.div 
             key={f.name} 
-            className="glass rounded-xl p-4 flex items-center justify-between border border-transparent transition-all duration-300 hover:shadow-[0_0_25px_rgba(59,130,246,0.15)] hover:border-secondary/40"
+            className="glass rounded-xl p-4 flex items-center justify-between border border-transparent transition-all duration-300 hover:shadow-[0_0_25px_rgba(59,130,246,0.15)] hover:border-secondary/40 hover:-translate-y-1"
             initial={{ opacity: 0, x: f.initial === "A" ? -30 : 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
