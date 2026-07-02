@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #05050a;
+  color: #e2e8f0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* grid background pattern jaisa hero mein hai */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(124,58,237,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124,58,237,0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* glass card effect */
+.glass {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+}
+
+.glow-purple {
+  box-shadow: 0 0 40px rgba(124,58,237,0.35);
+}
