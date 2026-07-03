@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 import { Bot, Zap, BarChart3, Layers, MessageSquare, ArrowUpRight } from "lucide-react";
 
 const services = [
-  { icon: Bot, title: "AI Customer Support Agent", desc: "24/7 intelligent support agent trained on your knowledge base. Handles tier-1 tickets autonomously, escalates complex issues, and learns continuously.", price: "From 80K PKR setup" },
-  { icon: Zap, title: "AI Lead Generation Bot", desc: "Qualify and capture leads around the clock. Integrates with your CRM, scores prospects in real time, and routes hot leads to your sales team.", price: "From 60K PKR setup" },
-  { icon: BarChart3, title: "AI Data Dashboard", desc: "Natural-language analytics on your existing data. Ask questions in plain English, get instant charts, summaries, and anomaly alerts.", price: "From 50K PKR setup" },
-  { icon: Layers, title: "DevOps-as-a-Service", desc: "Full-stack AWS infrastructure, managed end-to-end. CI/CD pipelines, Kubernetes orchestration, Terraform IaC, and 24/7 monitoring included.", price: "From 100K PKR setup" },
-  { icon: MessageSquare, title: "AI WhatsApp Agent", desc: "Meet your customers where they are. A context-aware WhatsApp bot that handles bookings, FAQs, and order updates.", price: "From 70K PKR setup" },
+  { icon: Bot, title: "AI Customer Support Agent", desc: "24/7 intelligent support agent trained on your knowledge base. Handles tier-1 tickets autonomously, escalates complex issues, and learns continuously.", price: "From $299 setup" },
+  { icon: Zap, title: "AI Lead Generation Bot", desc: "Qualify and capture leads around the clock. Integrates with your CRM, scores prospects in real time, and routes hot leads to your sales team.", price: "From $249 setup" },
+  { icon: BarChart3, title: "AI Data Dashboard", desc: "Natural-language analytics on your existing data. Ask questions in plain English, get instant charts, summaries, and anomaly alerts.", price: "From $349 setup" },
+  { icon: Layers, title: "DevOps-as-a-Service", desc: "Full-stack AWS infrastructure, managed end-to-end. CI/CD pipelines, Kubernetes orchestration, Terraform IaC, and 24/7 monitoring included.", price: "From $499 setup" },
+  { icon: MessageSquare, title: "AI WhatsApp Agent", desc: "Meet your customers where they are. A context-aware WhatsApp bot that handles bookings, FAQs, and order updates.", price: "From $279 setup" },
 ];
 
 export default function Services() {
@@ -28,7 +28,7 @@ export default function Services() {
         <h2 className="text-4xl font-bold mb-4 tracking-tight">Our Services</h2>
         <p className="text-muted max-w-xl mx-auto">
           Modular AI products and infrastructure solutions, ready to deploy in your stack.
-          Pricing is discussed 1-on-1 based on your exact scope.
+          Final pricing is discussed 1-on-1 based on your exact scope.
         </p>
       </motion.div>
 

@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
+import Trust from "../components/Trust";
 import Services from "../components/Services";
 import WhyUs from "../components/whyus";
 import Process from "../components/Process";
@@ -15,6 +16,7 @@ export default function Home() {
     <main className="min-h-screen bg-[#030014] text-white overflow-hidden">
       <Navbar />
       <Hero />
+      <Trust />
       <Services />
       <WhyUs />
       <Process />

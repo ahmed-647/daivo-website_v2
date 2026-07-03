@@ -31,15 +31,23 @@ export default function Contact() {
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 relative z-10">
 
         <motion.form
+          action="https://formsubmit.co/contact-us@daivo.tech"
+          method="POST"
           className="glass rounded-2xl p-6 space-y-4 border border-transparent transition-all duration-300 hover:shadow-[0_0_35px_rgba(124,58,237,0.15)] hover:border-primary/30"
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
+          <input type="hidden" name="_subject" value="New message from DaiVo website" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+
           <div>
             <label className="text-sm mb-1 block text-muted">Name</label>
             <input
+              name="name"
+              required
               placeholder="Your name"
               className="w-full bg-bgdark border border-border rounded-lg px-4 py-2.5 text-sm outline-none transition-all focus:border-primary focus:shadow-[0_0_15px_rgba(124,58,237,0.25)]"
             />
@@ -47,6 +55,9 @@ export default function Contact() {
           <div>
             <label className="text-sm mb-1 block text-muted">Email</label>
             <input
+              name="email"
+              type="email"
+              required
               placeholder="you@company.com"
               className="w-full bg-bgdark border border-border rounded-lg px-4 py-2.5 text-sm outline-none transition-all focus:border-primary focus:shadow-[0_0_15px_rgba(124,58,237,0.25)]"
             />
@@ -54,6 +65,8 @@ export default function Contact() {
           <div>
             <label className="text-sm mb-1 block text-muted">Message</label>
             <textarea
+              name="message"
+              required
               placeholder="Tell us what you're trying to build..."
               rows={4}
               className="w-full bg-bgdark border border-border rounded-lg px-4 py-2.5 text-sm outline-none transition-all focus:border-primary focus:shadow-[0_0_15px_rgba(124,58,237,0.25)]"

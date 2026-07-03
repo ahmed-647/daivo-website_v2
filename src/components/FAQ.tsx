@@ -4,11 +4,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
 const faqs = [
-  { q: "Ye budget se zyada expensive lag raha hai?", a: "Hum ek chota pilot project se start kar sakte hain — pehle ROI prove karte hain, phir scale karte hain. Full commitment se pehle risk-free trial ka option hamesha open hai." },
-  { q: "Sochna hai thoda — turant decide nahi kar sakte?", a: "Bilkul theek hai. Hum ek follow-up call schedule kar dete hain jab aap ready hon. Koi pressure tactics nahi — hum long-term relationship pe believe karte hain." },
-  { q: "Team/manager se approval leni hogi?", a: "Koi masla nahi — hum aapke team ke saath bhi ek call set up kar sakte hain, technical aur business dono angles cover karenge." },
-  { q: "Payment online website se ho sakti hai?", a: "Nahi — hum har client se personally baat karte hain taake exact scope, timeline, aur pricing discuss ho sake. Contact form bharo, hum 1 business day mein reply karenge." },
-  { q: "Delivery mein kitna time lagta hai?", a: "Typically 2-3 weeks setup ke liye, project complexity pe depend karta hai. 50% advance, 50% delivery pe — clear milestones ke saath." },
+  { q: "Isn't this expensive for a new business?", a: "We can start with a small pilot project — prove the ROI first, then scale. There's always a lower-risk starting point before a full commitment." },
+  { q: "Need some time to think it over?", a: "Totally fine. We'll schedule a follow-up call whenever you're ready — no pressure, no pushy sales tactics." },
+  { q: "Need approval from your team first?", a: "No problem — we're happy to jump on a call with your team as well, covering both the technical and business side." },
+  { q: "Can I pay directly through the website?", a: "Not yet — we talk to every client personally first to scope the project properly. Send us a message and we'll reply within one business day." },
+  { q: "How long does delivery take?", a: "Typically 2-3 weeks depending on project complexity. We work with clear milestones — 50% upfront, 50% on delivery." },
 ];
 
 export default function FAQ() {
