@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     siteName: "DaiVo",
     images: [
       {
-        url: "https://daivo.tech/opengraph-image.png", // Make sure to add an image named opengraph-image.png in your /public folder later
+        url: "https://daivo.tech/opengraph-image.png", // public/ folder mein koi bhi banner opengraph-image.png ke naam se rakh dena baad mein
         width: 1200,
         height: 630,
         alt: "DaiVo Agency Preview",
