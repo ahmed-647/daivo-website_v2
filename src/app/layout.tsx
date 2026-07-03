@@ -9,7 +9,8 @@ export const metadata: Metadata = {
   title: "DaiVo — AI Automation & Cloud DevOps",
   description: "We build production-ready AI employees and cloud infrastructure for ambitious startups.",
   verification: {
-    google: "PASTE_YOUR_GOOGLE_VERIFICATION_CODE_HERE", 
+    // Tumhaara actual google verification token ab sahi se dal gaya hai
+    google: "nY4yWw98v4BucGHHX_lwP3e2YJvwgplANCHnntJ5SDU", 
   },
 };
 
