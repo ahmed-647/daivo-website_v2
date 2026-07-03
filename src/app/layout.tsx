@@ -22,7 +22,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         {children}
-        {/* 2. Yeh component yahan zaroor hona chahiye */}
         <Analytics />
       </body>
     </html>
