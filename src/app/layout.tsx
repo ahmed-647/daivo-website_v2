@@ -6,10 +6,25 @@ import { Analytics } from "@vercel/analytics/next";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "DaiVo — AI Automation & Cloud DevOps Agency",
-  description: "We build production-ready AI employees, custom LLM chatbots, and scalable Cloud/DevOps infrastructure for ambitious startups.",
-  keywords: ["AI Automation", "DevOps-as-a-Service", "Cloud Infrastructure", "AI Agents", "Next.js", "AWS Consultants"],
+  title: {
+    default: "DaiVo — AI Automation & Cloud DevOps Agency",
+    template: "%s | DaiVo",
+  },
+  description: "We build production-ready AI employees, custom LLM chatbots, and scalable Cloud/DevOps infrastructure for ambitious startups in Pakistan and the Gulf.",
+  keywords: [
+    "DaiVo",
+    "AI Automation Agency",
+    "AI Agency Karachi",
+    "AI Agency Pakistan",
+    "DevOps-as-a-Service",
+    "Cloud Infrastructure",
+    "AI Agents",
+    "AWS Consultants Pakistan",
+    "AI Chatbot Development",
+  ],
   authors: [{ name: "Ahmed & Saad", url: "https://www.daivo.tech" }],
+  creator: "DaiVo",
+  publisher: "DaiVo",
 
   metadataBase: new URL("https://www.daivo.tech"),
   alternates: {
@@ -41,7 +56,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "DaiVo Agency Preview",
+        alt: "DaiVo — Engineering Intelligent Systems",
       },
     ],
     locale: "en_US",
@@ -56,6 +71,35 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "DaiVo",
+  alternateName: "DaiVo — Engineering Intelligent Systems",
+  url: "https://www.daivo.tech",
+  logo: "https://www.daivo.tech/logo.png",
+  description: "AI automation and cloud DevOps agency building production-ready AI employees and scalable cloud infrastructure.",
+  founders: [
+    { "@type": "Person", name: "Muhammad Ahmed" },
+    { "@type": "Person", name: "Saad Ullah" },
+  ],
+  sameAs: [
+    "https://www.linkedin.com/company/daivo/",
+    "https://github.com/ahmed-647",
+    "https://github.com/saadullahmemon900-dot",
+  ],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Karachi",
+    addressCountry: "PK",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: "contact-us@daivo.tech",
+    contactType: "customer service",
+  },
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -63,6 +107,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={inter.className}>
         {children}
         <Analytics />

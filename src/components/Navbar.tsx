@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const links = ["Home", "Services", "About", "Case Study", "Portfolio", "Contact"];
 
@@ -26,11 +27,13 @@ export default function Navbar() {
           : "border-b border-transparent bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        <a href="#home" className="text-xl font-bold tracking-tight relative group">
-          <span className="text-white">Dai</span>
-          <span className="bg-brand-gradient bg-clip-text text-transparent">Vo</span>
-          <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-brand-gradient transition-all duration-300 group-hover:w-full" />
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+        <a href="#home" className="flex items-center gap-2 group">
+          <Image src="/logo.png" alt="DaiVo Logo" width={36} height={36} className="object-contain transition-transform group-hover:scale-105" priority />
+          <span className="text-xl font-bold tracking-tight">
+            <span className="text-white">Dai</span>
+            <span className="bg-brand-gradient bg-clip-text text-transparent">Vo</span>
+          </span>
         </a>
 
         <div className="hidden md:flex items-center gap-8">
