@@ -11,6 +11,12 @@ export const metadata: Metadata = {
   keywords: ["AI Automation", "DevOps-as-a-Service", "Cloud Infrastructure", "AI Agents", "Next.js", "AWS Consultants"],
   authors: [{ name: "Ahmed & Saad", url: "https://daivo.tech" }],
   
+  // Plus Point: Google ko direct batana ke asali main link yahi hai
+  metadataBase: new URL("https://daivo.tech"),
+  alternates: {
+    canonical: "/",
+  },
+
   // Google Search Console Verification
   verification: {
     google: "nY4yWw98v4BucGHHX_lwP3e2YJvwgplANCHnntJ5SDU", 
@@ -24,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "DaiVo",
     images: [
       {
-        url: "https://daivo.tech/opengraph-image.png", // public/ folder mein koi bhi banner opengraph-image.png ke naam se rakh dena baad mein
+        url: "/opengraph-image.png", // Make sure to drop your banner in /public folder
         width: 1200,
         height: 630,
         alt: "DaiVo Agency Preview",
