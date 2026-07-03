@@ -30,8 +30,9 @@ export default function Contact() {
 
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 relative z-10">
 
+        {/* Clean & Fixed Form Structure for Web3Forms */}
         <motion.form
-          action="https://formsubmit.co/contact-us@daivo.tech"
+          action="https://api.web3forms.com/submit"
           method="POST"
           className="glass rounded-2xl p-6 space-y-4 border border-transparent transition-all duration-300 hover:shadow-[0_0_35px_rgba(124,58,237,0.15)] hover:border-primary/30"
           initial={{ opacity: 0, x: -40 }}
@@ -39,17 +40,21 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <input type="hidden" name="_subject" value="New message from DaiVo website" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_template" value="table" />
+          {/* Sahi access key bina kisi extra configuration mixup ke */}
+          <input type="hidden" name="access_key" value="450b846a-d9ea-4d61-9b81-6538efecbe43" />
+          
+          {/* In dono parameters se email ka subject bilkul clean aayega */}
+          <input type="hidden" name="subject" value="New lead from DaiVo Landing Page" />
+          <input type="hidden" name="from_name" value="DaiVo Website Form" />
 
           <div>
             <label className="text-sm mb-1 block text-muted">Name</label>
             <input
               name="name"
+              type="text"
               required
               placeholder="Your name"
-              className="w-full bg-bgdark border border-border rounded-lg px-4 py-2.5 text-sm outline-none transition-all focus:border-primary focus:shadow-[0_0_15px_rgba(124,58,237,0.25)]"
+              className="w-full bg-bgdark border border-border rounded-lg px-4 py-2.5 text-sm outline-none transition-all focus:border-primary focus:shadow-[0_0_15px_rgba(124,58,237,0.25)] text-white"
             />
           </div>
           <div>
@@ -59,7 +64,7 @@ export default function Contact() {
               type="email"
               required
               placeholder="you@company.com"
-              className="w-full bg-bgdark border border-border rounded-lg px-4 py-2.5 text-sm outline-none transition-all focus:border-primary focus:shadow-[0_0_15px_rgba(124,58,237,0.25)]"
+              className="w-full bg-bgdark border border-border rounded-lg px-4 py-2.5 text-sm outline-none transition-all focus:border-primary focus:shadow-[0_0_15px_rgba(124,58,237,0.25)] text-white"
             />
           </div>
           <div>
@@ -69,12 +74,12 @@ export default function Contact() {
               required
               placeholder="Tell us what you're trying to build..."
               rows={4}
-              className="w-full bg-bgdark border border-border rounded-lg px-4 py-2.5 text-sm outline-none transition-all focus:border-primary focus:shadow-[0_0_15px_rgba(124,58,237,0.25)]"
+              className="w-full bg-bgdark border border-border rounded-lg px-4 py-2.5 text-sm outline-none transition-all focus:border-primary focus:shadow-[0_0_15px_rgba(124,58,237,0.25)] text-white"
             />
           </div>
           <button
             type="submit"
-            className="w-full bg-brand-gradient py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-transform hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_25px_rgba(124,58,237,0.35)]"
+            className="w-full bg-brand-gradient py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-transform hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_25px_rgba(124,58,237,0.35)] text-white"
           >
             <Send size={16} /> Send Message
           </button>
