@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+// Vercel Analytics import kiya
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "DaiVo — AI Automation & Cloud DevOps",
   description: "We build production-ready AI employees and cloud infrastructure for ambitious startups.",
+  // Google Search Console ki verification ke liye verification object add kiya
+  verification: {
+    google: "PASTE_YOUR_GOOGLE_VERIFICATION_CODE_HERE", 
+  },
 };
 
 export default function RootLayout({
@@ -16,7 +22,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        {/* Vercel Analytics component body ke aakhir mein add kar diya */}
+        <Analytics />
+      </body>
     </html>
   );
 }
