@@ -4,19 +4,23 @@ import { Mail } from "lucide-react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const founders = [
-  { 
-    name: "Ahmed", 
-    role: "Co-Founder & AI Solutions Architect", 
-    email: "ahmed@daivo.tech", 
-    bio: "AWS-certified cloud architect with deep expertise in Kubernetes, orchestration, and highly available infrastructure.",
-    delay: 0.1
+  {
+    name: "Ahmed",
+    role: "Co-Founder & AI Solutions Architect",
+    email: "ahmed@daivo.tech",
+    bio: "AWS-certified cloud architect with deep expertise in Kubernetes, orchestration, and highly available infrastructure. Handles deployment, hosting, and automation end-to-end.",
+    linkedin: "https://www.linkedin.com/in/ahmed67/",
+    github: "https://github.com/ahmed-647",
+    delay: 0.1,
   },
-  { 
-    name: "Saad", 
-    role: "Technical Co-Founder & AI Engineer", 
-    email: "saad@daivo.tech", 
-    bio: "Specialist in LLM fine-tuning, agent orchestration, and production-grade secure application deployment.",
-    delay: 0.3
+  {
+    name: "Saad",
+    role: "Technical Co-Founder & AI Engineer",
+    email: "saad@daivo.tech",
+    bio: "Specialist in LLM fine-tuning, agent orchestration, and predictive modeling. Builds the AI models and data pipelines that power every DaiVo agent.",
+    linkedin: "https://www.linkedin.com/in/saad-ullah-312762394/",
+    github: "https://github.com/saadullahmemon900-dot",
+    delay: 0.3,
   },
 ];
 
@@ -24,7 +28,7 @@ export default function Team() {
   return (
     <section id="about" className="py-24 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto text-center mb-16">
-        <motion.span 
+        <motion.span
           className="inline-block text-xs tracking-widest text-primary border border-primary/40 rounded-full px-4 py-1.5 mb-4 bg-primary/5"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -32,7 +36,7 @@ export default function Team() {
         >
           ● THE TEAM
         </motion.span>
-        <motion.h2 
+        <motion.h2
           className="text-4xl font-bold mb-4 tracking-tight"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -41,7 +45,7 @@ export default function Team() {
         >
           Meet the Founders
         </motion.h2>
-        <motion.p 
+        <motion.p
           className="text-muted max-w-xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -76,10 +80,10 @@ export default function Team() {
                 <Mail size={12} className="text-primary" /> {f.email}
               </span>
               <div className="flex gap-3">
-                <a href="#" className="text-muted hover:text-secondary transition-colors hover:scale-110">
+                <a href={f.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted hover:text-secondary transition-colors hover:scale-110">
                   <FaLinkedin size={14} />
                 </a>
-                <a href="#" className="text-muted hover:text-white transition-colors hover:scale-110">
+                <a href={f.github} target="_blank" rel="noopener noreferrer" className="text-muted hover:text-white transition-colors hover:scale-110">
                   <FaGithub size={14} />
                 </a>
               </div>

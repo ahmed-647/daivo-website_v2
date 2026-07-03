@@ -14,14 +14,14 @@ const stack = [
 ];
 
 const founders = [
-  { name: "Ahmed", handle: "@ahmed-daivo", initial: "A", delay: 0.2 },
-  { name: "Saad", handle: "@saad-daivo", initial: "S", delay: 0.4 },
+  { name: "Ahmed", handle: "@ahmed-647", initial: "A", delay: 0.2, url: "https://github.com/ahmed-647" },
+  { name: "Saad", handle: "@saadullahmemon900-dot", initial: "S", delay: 0.4, url: "https://github.com/saadullahmemon900-dot" },
 ];
 
 export default function Portfolio() {
   return (
     <section id="portfolio" className="py-24 px-6 overflow-hidden">
-      <motion.div 
+      <motion.div
         className="max-w-7xl mx-auto text-center mb-12"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -39,8 +39,8 @@ export default function Portfolio() {
 
       <div className="flex flex-wrap justify-center gap-3 mb-12 max-w-4xl mx-auto">
         {stack.map((t, index) => (
-          <motion.span 
-            key={t.name} 
+          <motion.span
+            key={t.name}
             className="glass flex items-center gap-2 text-sm px-4 py-2 rounded-full border border-border/40 transition-all hover:border-primary/50 hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(124,58,237,0.15)] cursor-default"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -55,8 +55,11 @@ export default function Portfolio() {
 
       <div className="max-w-3xl mx-auto grid md:grid-cols-2 gap-4">
         {founders.map((f) => (
-          <motion.div 
-            key={f.name} 
+          <motion.a
+            href={f.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            key={f.name}
             className="glass rounded-xl p-4 flex items-center justify-between border border-transparent transition-all duration-300 hover:shadow-[0_0_25px_rgba(59,130,246,0.15)] hover:border-secondary/40 hover:-translate-y-1"
             initial={{ opacity: 0, x: f.initial === "A" ? -30 : 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -74,7 +77,7 @@ export default function Portfolio() {
                 </p>
               </div>
             </div>
-          </motion.div>
+          </motion.a>
         ))}
       </div>
     </section>
