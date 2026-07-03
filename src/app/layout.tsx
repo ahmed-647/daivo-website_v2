@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-// Vercel Analytics import kiya
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "DaiVo — AI Automation & Cloud DevOps",
   description: "We build production-ready AI employees and cloud infrastructure for ambitious startups.",
-  // Google Search Console ki verification ke liye verification object add kiya
   verification: {
     google: "PASTE_YOUR_GOOGLE_VERIFICATION_CODE_HERE", 
   },
@@ -24,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         {children}
-        {/* Vercel Analytics component body ke aakhir mein add kar diya */}
+        {/* 2. Yeh component yahan zaroor hona chahiye */}
         <Analytics />
       </body>
     </html>
