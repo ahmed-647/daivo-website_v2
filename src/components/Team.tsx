@@ -6,7 +6,7 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 const founders = [
   {
     name: "Ahmed",
-    role: "Co-Founder & AI Solutions Architect",
+    role: "Co-Founder & Chief Executive Officer (CEO)",
     email: "ahmed@daivo.tech",
     bio: "AWS-certified cloud architect with deep expertise in Kubernetes, orchestration, and highly available infrastructure. Handles deployment, hosting, and automation end-to-end.",
     linkedin: "https://www.linkedin.com/in/ahmed67/",
@@ -15,7 +15,7 @@ const founders = [
   },
   {
     name: "Saad",
-    role: "Technical Co-Founder & AI Engineer",
+    role: "Technical Co-Founder & Lead AI Engineer",
     email: "saad@daivo.tech",
     bio: "Specialist in LLM fine-tuning, agent orchestration, and predictive modeling. Builds the AI models and data pipelines that power every DaiVo agent.",
     linkedin: "https://www.linkedin.com/in/saad-ullah-312762394/",
