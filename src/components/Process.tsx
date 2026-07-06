@@ -28,7 +28,13 @@ export default function Process() {
       </motion.div>
 
       <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 relative">
-        <div className="hidden md:block absolute top-11 left-[16.5%] right-[16.5%] h-px bg-gradient-to-r from-primary/40 via-secondary/40 to-primary/40" />
+        <motion.div
+          className="hidden md:block absolute top-11 left-[16.5%] right-[16.5%] h-px bg-gradient-to-r from-primary/40 via-secondary/40 to-primary/40 origin-left"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
+        />
         {steps.map((step, idx) => (
           <motion.div
             key={step.number}

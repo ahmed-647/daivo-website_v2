@@ -98,25 +98,46 @@ const jsonLd = {
     email: "contact-us@daivo.tech",
     contactType: "customer service",
   },
+  makesOffer: [
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "AI Customer Support Agent",
+        description: "24/7 intelligent support agent trained on your knowledge base, integrated with your existing tools.",
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "AI Lead Generation Bot",
+        description: "Qualify and capture leads around the clock, integrated with your CRM.",
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "AI Data Dashboard",
+        description: "Natural-language analytics on your existing business data.",
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "DevOps-as-a-Service",
+        description: "Full-stack AWS infrastructure managed end-to-end with CI/CD and 24/7 monitoring.",
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "AI WhatsApp Agent",
+        description: "Context-aware WhatsApp bot handling bookings, FAQs, and order updates.",
+      },
+    },
+  ],
 };
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <html lang="en" className="scroll-smooth">
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
-      <body className={inter.className}>
-        {children}
-        <Analytics />
-      </body>
-    </html>
-  );
-}
