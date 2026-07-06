@@ -103,41 +103,63 @@ const jsonLd = {
       "@type": "Offer",
       itemOffered: {
         "@type": "Service",
-        name: "AI Customer Support Agent",
-        description: "24/7 intelligent support agent trained on your knowledge base, integrated with your existing tools.",
+        "name": "AI Customer Support Agent",
+        "description": "24/7 intelligent support agent trained on your knowledge base, integrated with your existing tools.",
       },
     },
     {
       "@type": "Offer",
       itemOffered: {
         "@type": "Service",
-        name: "AI Lead Generation Bot",
-        description: "Qualify and capture leads around the clock, integrated with your CRM.",
+        "name": "AI Lead Generation Bot",
+        "description": "Qualify and capture leads around the clock, integrated with your CRM.",
       },
     },
     {
       "@type": "Offer",
       itemOffered: {
         "@type": "Service",
-        name: "AI Data Dashboard",
-        description: "Natural-language analytics on your existing business data.",
+        "name": "AI Data Dashboard",
+        "description": "Natural-language analytics on your existing business data.",
       },
     },
     {
       "@type": "Offer",
       itemOffered: {
         "@type": "Service",
-        name: "DevOps-as-a-Service",
-        description: "Full-stack AWS infrastructure managed end-to-end with CI/CD and 24/7 monitoring.",
+        "name": "DevOps-as-a-Service",
+        "description": "Full-stack AWS infrastructure managed end-to-end with CI/CD and 24/7 monitoring.",
       },
     },
     {
       "@type": "Offer",
       itemOffered: {
         "@type": "Service",
-        name: "AI WhatsApp Agent",
-        description: "Context-aware WhatsApp bot handling bookings, FAQs, and order updates.",
+        "name": "AI WhatsApp Agent",
+        "description": "Context-aware WhatsApp bot handling bookings, FAQs, and order updates.",
       },
     },
   ],
 };
+
+// ======= FIX: EXPORT DEFAULT FUNCTION ADD KAR DIYA HAI =======
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
+      <body className={`${inter.className} antialiased`}>
+        {children}
+        <Analytics />
+      </body>
+    </html>
+  );
+}
