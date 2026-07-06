@@ -4,7 +4,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 
-const links = ["Home", "Services", "About", "Case Study", "Portfolio", "Contact"];
+// About key links to why-us safely
+const links = [
+  { name: "Home", href: "#home" },
+  { name: "Services", href: "#services" },
+  { name: "About", href: "#why-us" },
+  { name: "Case Study", href: "#case-study" },
+  { name: "Portfolio", href: "#portfolio" },
+  { name: "Contact", href: "#contact" }
+];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -38,8 +46,8 @@ export default function Navbar() {
 
         <div className="hidden md:flex items-center gap-8">
           {links.map((link) => (
-            <a key={link} href={`#${link.toLowerCase().replace(" ", "-")}`} className="text-sm text-muted hover:text-white transition-colors relative group">
-              {link}
+            <a key={link.name} href={link.href} className="text-sm text-muted hover:text-white transition-colors relative group">
+              {link.name}
               <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-brand-gradient transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
@@ -63,8 +71,8 @@ export default function Navbar() {
           >
             <div className="flex flex-col gap-4 px-6 py-6">
               {links.map((link) => (
-                <a key={link} href={`#${link.toLowerCase().replace(" ", "-")}`} onClick={() => setOpen(false)} className="text-muted hover:text-white transition-colors">
-                  {link}
+                <a key={link.name} href={link.href} onClick={() => setOpen(false)} className="text-muted hover:text-white transition-colors">
+                  {link.name}
                 </a>
               ))}
               <a href="#contact" onClick={() => setOpen(false)} className="bg-brand-gradient text-white text-sm font-semibold px-5 py-2.5 rounded-full text-center">

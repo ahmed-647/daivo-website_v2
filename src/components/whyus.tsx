@@ -4,7 +4,7 @@ import { Cloud, Brain, ArrowRight } from "lucide-react";
 
 export default function WhyUs() {
   return (
-    <section id="why-us" className="py-24 px-6 relative overflow-hidden">
+    <section id="why-us" className="py-24 px-6 relative overflow-hidden bg-[#030712]">
       <div className="blob w-[400px] h-[400px] bg-primary top-0 left-1/3 animate-blob opacity-10" />
 
       <motion.div
