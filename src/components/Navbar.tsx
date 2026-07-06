@@ -29,13 +29,13 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-border bg-bgdark/90 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.4)]"
-          : "border-b border-transparent bg-transparent"
+          ? "border-b border-border bg-bgdark/90 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.4)] py-3"
+          : "border-b border-transparent bg-transparent py-5"
       }`}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6">
         <a href="#home" className="flex items-center gap-2 group">
           <Image src="/logo.png" alt="DaiVo Logo" width={36} height={36} className="object-contain transition-transform group-hover:scale-105" priority />
           <span className="text-xl font-bold tracking-tight">
