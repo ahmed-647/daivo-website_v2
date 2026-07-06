@@ -29,9 +29,10 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
         <a href="#home" className="flex items-center gap-2 group">
-          {/* ⬇️ Yahan maine .png ki jagah .ico kar diya hai tumhaari file ke mutabiq */}
-          <Image src="/logo.ico" alt="DaiVo Logo" width={36} height={36} className="object-contain transition-transform group-hover:scale-105" priority />
+          <Image src="/logo.png" alt="DaiVo Logo" width={36} height={36} className="object-contain transition-transform group-hover:scale-105" priority />
           <span className="text-xl font-bold tracking-tight">
+            <span className="text-white">Dai</span>
+            <span className="bg-brand-gradient bg-clip-text text-transparent">Vo</span>
           </span>
         </a>
 

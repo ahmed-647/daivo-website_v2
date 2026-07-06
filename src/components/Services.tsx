@@ -1,13 +1,13 @@
 "use client";
 import { motion } from "framer-motion";
-import { Bot, Zap, BarChart3, Layers, MessageSquare, ArrowUpRight } from "lucide-react";
+import { Bot, Zap, BarChart3, Layers, MessageSquare, FileText, ArrowRight } from "lucide-react";
 
 const services = [
-  { icon: Bot, title: "AI Customer Support Agent", desc: "24/7 intelligent support agent trained on your knowledge base. Handles tier-1 tickets autonomously, escalates complex issues, and learns continuously.", price: "From $299 setup" },
-  { icon: Zap, title: "AI Lead Generation Bot", desc: "Qualify and capture leads around the clock. Integrates with your CRM, scores prospects in real time, and routes hot leads to your sales team.", price: "From $249 setup" },
-  { icon: BarChart3, title: "AI Data Dashboard", desc: "Natural-language analytics on your existing data. Ask questions in plain English, get instant charts, summaries, and anomaly alerts.", price: "From $349 setup" },
-  { icon: Layers, title: "DevOps-as-a-Service", desc: "Full-stack AWS infrastructure, managed end-to-end. CI/CD pipelines, Kubernetes orchestration, Terraform IaC, and 24/7 monitoring included.", price: "From $499 setup" },
-  { icon: MessageSquare, title: "AI WhatsApp Agent", desc: "Meet your customers where they are. A context-aware WhatsApp bot that handles bookings, FAQs, and order updates.", price: "From $279 setup" },
+  { icon: Bot, title: "AI Customer Support Agent", desc: "24/7 intelligent support agent trained on your knowledge base. Handles tier-1 tickets autonomously, escalates complex issues, and learns continuously.", pdf: "/daivo-ai-customer-support.pdf" },
+  { icon: Zap, title: "AI Lead Generation Bot", desc: "Qualify and capture leads around the clock. Integrates with your CRM, scores prospects in real time, and routes hot leads to your sales team.", pdf: "/daivo-ai-lead-generation.pdf" },
+  { icon: BarChart3, title: "AI Data Dashboard", desc: "Natural-language analytics on your existing data. Ask questions in plain English, get instant charts, summaries, and anomaly alerts.", pdf: "/daivo-ai-data-dashboard.pdf" },
+  { icon: Layers, title: "DevOps-as-a-Service", desc: "Full-stack AWS infrastructure, managed end-to-end. CI/CD pipelines, Kubernetes orchestration, Terraform IaC, and 24/7 monitoring included.", pdf: "/daivo-devops-as-a-service.pdf" },
+  { icon: MessageSquare, title: "AI WhatsApp Agent", desc: "Meet your customers where they are. A context-aware WhatsApp bot that handles bookings, FAQs, and order updates.", pdf: null },
 ];
 
 export default function Services() {
@@ -28,34 +28,49 @@ export default function Services() {
         <h2 className="text-4xl font-bold mb-4 tracking-tight">Our Services</h2>
         <p className="text-muted max-w-xl mx-auto">
           Modular AI products and infrastructure solutions, ready to deploy in your stack.
-          Final pricing is discussed 1-on-1 based on your exact scope.
         </p>
       </motion.div>
 
       <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6 relative z-10">
-        {services.map((s, index) => (
-          <motion.a
-            href="#contact"
-            key={s.title}
-            className="group glass rounded-2xl p-6 border border-transparent transition-all duration-300 hover:shadow-[0_0_40px_rgba(124,58,237,0.25)] hover:border-primary/40 hover:-translate-y-1 cursor-pointer block"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-          >
-            <div className="flex items-start justify-between mb-4">
-              <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center transition-all duration-300 group-hover:bg-brand-gradient group-hover:shadow-[0_0_20px_rgba(124,58,237,0.4)]">
+        {services.map((s, index) => {
+          const href = s.pdf ?? "#contact";
+          const isPdf = Boolean(s.pdf);
+          return (
+            <motion.a
+              href={href}
+              target={isPdf ? "_blank" : undefined}
+              rel={isPdf ? "noopener noreferrer" : undefined}
+              key={s.title}
+              className="group glass rounded-2xl p-6 border border-transparent transition-all duration-300 hover:shadow-[0_0_40px_rgba(124,58,237,0.25)] hover:border-primary/40 hover:-translate-y-1 cursor-pointer block relative overflow-hidden"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <span className="absolute top-4 right-4 text-[10px] font-bold uppercase tracking-wide bg-brand-gradient text-white px-2.5 py-1 rounded-full shadow-[0_0_15px_rgba(124,58,237,0.4)]">
+                50% off for early clients
+              </span>
+
+              <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-4 transition-all duration-300 group-hover:bg-brand-gradient group-hover:shadow-[0_0_20px_rgba(124,58,237,0.4)]">
                 <s.icon className="text-primary transition-colors group-hover:text-white" size={20} />
               </div>
-              <ArrowUpRight size={18} className="text-muted opacity-0 group-hover:opacity-100 group-hover:text-primary transition-all" />
-            </div>
-            <h3 className="font-semibold text-lg mb-2">{s.title}</h3>
-            <p className="text-muted text-sm mb-5 leading-relaxed">{s.desc}</p>
-            <span className="inline-block bg-primary/10 text-primary text-xs font-semibold px-3 py-1.5 rounded-full transition-all group-hover:bg-primary/20">
-              {s.price} — let&apos;s talk
-            </span>
-          </motion.a>
-        ))}
+              <h3 className="font-semibold text-lg mb-2 pr-4">{s.title}</h3>
+              <p className="text-muted text-sm mb-5 leading-relaxed">{s.desc}</p>
+
+              <span className="inline-flex items-center gap-1.5 text-primary text-xs font-semibold group-hover:gap-2.5 transition-all">
+                {isPdf ? (
+                  <>
+                    <FileText size={14} /> View service sheet (PDF)
+                  </>
+                ) : (
+                  <>
+                    Let&apos;s talk <ArrowRight size={14} />
+                  </>
+                )}
+              </span>
+            </motion.a>
+          );
+        })}
       </div>
     </section>
   );
