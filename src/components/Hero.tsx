@@ -1,103 +1,76 @@
 "use client";
 import { motion } from "framer-motion";
-import { Clock, ShieldCheck, TrendingUp } from "lucide-react";
+import { Bot, Zap, BarChart3, Layers, MessageSquare, FileText, ArrowRight } from "lucide-react";
 
-const orbitBadges = [
-  { label: "GPT-4o", pos: "top-4 left-1/4", delay: 0.1 },
-  { label: "Lambda", pos: "top-4 right-1/4", delay: 0.3 },
-  { label: "K8s", pos: "bottom-4 left-1/4", delay: 0.5 },
-  { label: "Agents", pos: "bottom-4 right-1/4", delay: 0.7 },
+const services = [
+  { icon: Bot, title: "AI Customer Support Agent", desc: "24/7 intelligent support agent trained on your knowledge base. Handles tier-1 tickets autonomously, escalates complex issues, and learns continuously.", pdf: "/daivo-ai-customer-support.pdf" },
+  { icon: Zap, title: "AI Lead Generation Bot", desc: "Qualify and capture leads around the clock. Integrates with your CRM, scores prospects in real time, and routes hot leads to your sales team.", pdf: "/daivo-ai-lead-generation.pdf" },
+  { icon: BarChart3, title: "AI Data Dashboard", desc: "Natural-language analytics on your existing data. Ask questions in plain English, get instant charts, summaries, and anomaly alerts.", pdf: "/daivo-ai-data-dashboard.pdf" },
+  { icon: Layers, title: "DevOps-as-a-Service", desc: "Full-stack AWS infrastructure, managed end-to-end. CI/CD pipelines, Kubernetes orchestration, Terraform IaC, and 24/7 monitoring included.", pdf: "/daivo-devops-as-a-service.pdf" },
+  { icon: MessageSquare, title: "AI WhatsApp Agent", desc: "Meet your customers where they are. A context-aware WhatsApp bot that handles bookings, FAQs, and order updates.", pdf: null },
 ];
 
-export default function Hero() {
+export default function Services() {
   return (
-    <section id="home" className="grid-bg pt-40 pb-24 px-6 relative overflow-hidden">
-      <div className="blob w-[500px] h-[500px] bg-primary top-[-100px] left-[-150px] animate-blob" />
-      <div className="blob w-[400px] h-[400px] bg-secondary bottom-[-100px] right-[-100px] animate-blob" style={{ animationDelay: "4s" }} />
+    <section id="services" className="py-24 px-6 overflow-hidden relative">
+      <div className="blob w-[350px] h-[350px] bg-secondary top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-blob opacity-10" />
 
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
+      <motion.div
+        className="max-w-7xl mx-auto text-center mb-16 relative z-10"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <span className="inline-block text-xs tracking-widest text-primary border border-primary/40 rounded-full px-4 py-1.5 mb-4 bg-primary/5">
+          ● WHAT WE BUILD
+        </span>
+        <h2 className="text-4xl font-bold mb-4 tracking-tight">Our Services</h2>
+        <p className="text-muted max-w-xl mx-auto">
+          Modular AI products and infrastructure solutions, ready to deploy in your stack.
+        </p>
+      </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
-          <motion.span
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 text-xs tracking-widest text-primary border border-primary/40 rounded-full px-4 py-1.5 mb-6 bg-primary/5"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse-glow" />
-            AI AUTOMATION & CLOUD DEVOPS
-          </motion.span>
-
-          <h1 className="text-5xl md:text-6xl font-extrabold leading-[1.1] mb-6 tracking-tight">
-            AI Agents.{" "}
-            <span className="bg-brand-gradient bg-clip-text text-transparent">
-              Deployed on AWS.
-            </span>{" "}
-            Monitored 24/7.
-          </h1>
-          <p className="text-muted text-lg mb-8 max-w-xl leading-relaxed">
-            We build production-ready AI employees and cloud infrastructure
-            for ambitious startups. From intelligent agents to scalable
-            DevOps — engineered for reliability, delivered fast.
-          </p>
-
-          <div className="flex flex-wrap gap-4 mb-10">
-            <a href="#contact" className="relative bg-brand-gradient px-6 py-3 rounded-full font-semibold transition-transform hover:scale-105 active:scale-95 shadow-[0_0_25px_rgba(124,58,237,0.45)]">Get Started →</a>
-            <a href="#case-study" className="border border-border px-6 py-3 rounded-full font-semibold transition-all hover:bg-white/5 hover:border-primary/50">▷ See Case Study</a>
-          </div>
-
-          <div className="flex flex-wrap gap-10 text-sm">
-            <div className="flex items-center gap-2">
-              <Clock size={18} className="text-primary" />
-              <div><b>&lt;2s</b><p className="text-muted">Avg response time</p></div>
-            </div>
-            <div className="flex items-center gap-2">
-              <ShieldCheck size={18} className="text-primary" />
-              <div><b>99.9%</b><p className="text-muted">Uptime SLA</p></div>
-            </div>
-            <div className="flex items-center gap-2">
-              <TrendingUp size={18} className="text-primary" />
-              <div><b>12,400+</b><p className="text-muted">Questions handled</p></div>
-            </div>
-          </div>
-        </motion.div>
-
-        <motion.div
-          className="relative h-[400px] flex items-center justify-center"
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <div className="absolute w-[380px] h-[380px] rounded-full border border-border/60 animate-[spin_25s_linear_infinite]" />
-          <div className="absolute w-[280px] h-[280px] rounded-full border border-border/40 animate-[spin_18s_linear_infinite_reverse]" />
-          <div className="absolute w-[380px] h-[380px] rounded-full bg-radial-fade" />
-
-          <div className="w-24 h-24 rounded-2xl bg-brand-gradient flex items-center justify-center font-bold z-10 shadow-[0_0_50px_rgba(124,58,237,0.6)] animate-pulse-glow">
-            <div className="w-[92%] h-[92%] bg-[#05050a] rounded-2xl flex items-center justify-center">
-              <span className="text-white text-lg">Dai<span className="text-secondary">Vo</span></span>
-            </div>
-          </div>
-
-          {orbitBadges.map((b) => (
-            <motion.span
-              key={b.label}
-              className={`absolute ${b.pos} glass text-xs px-3 py-1.5 rounded-full border border-border/60 shadow-lg hover:border-primary/50 hover:scale-110 transition-all cursor-default`}
-              initial={{ opacity: 0, scale: 0.5 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6 relative z-10">
+        {services.map((s, index) => {
+          const href = s.pdf ?? "#contact";
+          const isPdf = Boolean(s.pdf);
+          return (
+            <motion.a
+              href={href}
+              target={isPdf ? "_blank" : undefined}
+              rel={isPdf ? "noopener noreferrer" : undefined}
+              key={s.title}
+              className="group glass rounded-2xl p-6 border border-transparent transition-all duration-300 hover:shadow-[0_0_40px_rgba(124,58,237,0.25)] hover:border-primary/40 hover:-translate-y-1 cursor-pointer block relative overflow-hidden"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: b.delay, ease: "backOut" }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              ● {b.label}
-            </motion.span>
-          ))}
-        </motion.div>
+              <span className="absolute top-4 right-4 text-[10px] font-bold uppercase tracking-wide bg-brand-gradient text-white px-2.5 py-1 rounded-full shadow-[0_0_15px_rgba(124,58,237,0.4)]">
+                50% off for early clients
+              </span>
 
+              <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-4 transition-all duration-300 group-hover:bg-brand-gradient group-hover:shadow-[0_0_20px_rgba(124,58,237,0.4)]">
+                <s.icon className="text-primary transition-colors group-hover:text-white" size={20} />
+              </div>
+              <h3 className="font-semibold text-lg mb-2 pr-4">{s.title}</h3>
+              <p className="text-muted text-sm mb-5 leading-relaxed">{s.desc}</p>
+
+              <span className="inline-flex items-center gap-1.5 text-primary text-xs font-semibold group-hover:gap-2.5 transition-all">
+                {isPdf ? (
+                  <>
+                    <FileText size={14} /> View service sheet (PDF)
+                  </>
+                ) : (
+                  <>
+                    Let&apos;s talk <ArrowRight size={14} />
+                  </>
+                )}
+              </span>
+            </motion.a>
+          );
+        })}
       </div>
     </section>
   );
