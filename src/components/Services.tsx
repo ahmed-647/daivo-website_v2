@@ -60,7 +60,7 @@ export default function Services() {
               <span className="inline-flex items-center gap-1.5 text-primary text-xs font-semibold group-hover:gap-2.5 transition-all">
                 {isPdf ? (
                   <>
-                    <FileText size={14} /> View service sheet (PDF)
+                    <FileText size={14} /> Let's talk (PDF)
                   </>
                 ) : (
                   <>
