@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+// 1. Google Analytics component ko yahan import kiya
+import { GoogleAnalytics } from "@next/third-parties/google"; 
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -142,7 +144,6 @@ const jsonLd = {
   ],
 };
 
-// ======= FIX: EXPORT DEFAULT FUNCTION ADD KAR DIYA HAI =======
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -159,6 +160,9 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`}>
         {children}
         <Analytics />
+        
+        {/* 2. Google Analytics component aapki unique ID ke sath yahan safe add ho gaya */}
+        <GoogleAnalytics gaId="G-3ZZJ33MN2M" />
       </body>
     </html>
   );
